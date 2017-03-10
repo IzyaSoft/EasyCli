@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.exe.debug.1493663849/LD_LIBRARY_PATH/delimiter=\:
+environment/project/cdt.managedbuild.config.gnu.exe.debug.1493663849/LD_LIBRARY_PATH/operation=replace
+environment/project/cdt.managedbuild.config.gnu.exe.debug.1493663849/LD_LIBRARY_PATH/value=/lib\:/lib64\:/usr/lib\:/usr/lib64\:/home/michael/Projects/eclipse/C++/EasyCmdLineReader/Debug/
+environment/project/cdt.managedbuild.config.gnu.exe.debug.1493663849/append=true
+environment/project/cdt.managedbuild.config.gnu.exe.debug.1493663849/appendContributed=true

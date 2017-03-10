@@ -46,36 +46,36 @@ namespace EasySoftCmdLineTests
 
     TEST(CommandLineOptionsParser, SimpleOnlyKeysLinuxStyle)
     {
-        Radio80211ah::CommandLineOptionsParser parser(linuxCommandLinePrefixes, keyValueSeparatorViaSpace);
-        std::vector<Radio80211ah::KeyValueOption> actual = parser.Parse(2, onlyHelpOption);
+        EasySoftCmdLine::CommandLineOptionsParser parser(linuxCommandLinePrefixes, keyValueSeparatorViaSpace);
+        std::vector<EasySoftCmdLine::KeyValueOption> actual = parser.Parse(2, onlyHelpOption);
         CheckOptions(expectedOnlyHelpOptions, actual);
     }
 
     TEST(CommandLineOptionsParser, KeysSeparatedWithValuesViaSpaceLinuxStyle)
     {
-        Radio80211ah::CommandLineOptionsParser parser(linuxCommandLinePrefixes, keyValueSeparatorViaSpace);
-        std::vector<Radio80211ah::KeyValueOption> actual = parser.Parse(4, optionsWithRealValues);
+        EasySoftCmdLine::CommandLineOptionsParser parser(linuxCommandLinePrefixes, keyValueSeparatorViaSpace);
+        std::vector<EasySoftCmdLine::KeyValueOption> actual = parser.Parse(4, optionsWithRealValues);
         CheckOptions(expectedOptionsWithRealValues, actual);
     }
 
     TEST(CommandLineOptionsParser, KeysSeparatedWithValuesViaEqualsLinuxStyle)
     {
-        Radio80211ah::CommandLineOptionsParser parser(linuxCommandLinePrefixes, keyValueSeparatorViaEquals);
-        std::vector<Radio80211ah::KeyValueOption> actual = parser.Parse(4, optionsWithRealValuesSeparatedWithEquals);
+        EasySoftCmdLine::CommandLineOptionsParser parser(linuxCommandLinePrefixes, keyValueSeparatorViaEquals);
+        std::vector<EasySoftCmdLine::KeyValueOption> actual = parser.Parse(4, optionsWithRealValuesSeparatedWithEquals);
         CheckOptions(expectedOptionsWithRealValuesSeparatedWithEquals, actual);
     }
 
     TEST(CommandLineOptionsParser, KeysWithoutPrefixes)
     {
-        Radio80211ah::CommandLineOptionsParser parser(linuxCommandLinePrefixes, keyValueSeparatorViaEquals);
-        std::vector<Radio80211ah::KeyValueOption> actual = parser.Parse(4, optionsWithoutPrefixes);
+        EasySoftCmdLine::CommandLineOptionsParser parser(linuxCommandLinePrefixes, keyValueSeparatorViaEquals);
+        std::vector<EasySoftCmdLine::KeyValueOption> actual = parser.Parse(4, optionsWithoutPrefixes);
         CheckOptions(expectedOptionsWithoutPrefixes, actual);
     }
 
     TEST(CommandLineOptionsParser, KeysSeparatedWithValuesViaEqualsWindowsStyle)
     {
-        Radio80211ah::CommandLineOptionsParser parser(windowsCommandLinePrefixes, keyValueSeparatorViaEquals);
-        std::vector<Radio80211ah::KeyValueOption> actual = parser.Parse(4, optionsWithRealValuesSeparatedWithEqualsWinStyle);
+        EasySoftCmdLine::CommandLineOptionsParser parser(windowsCommandLinePrefixes, keyValueSeparatorViaEquals);
+        std::vector<EasySoftCmdLine::KeyValueOption> actual = parser.Parse(4, optionsWithRealValuesSeparatedWithEqualsWinStyle);
         CheckOptions(expectedOptionsWithRealValuesSeparatedWithEqualsWinStyle, actual);
     }
 }
