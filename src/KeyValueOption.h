@@ -15,6 +15,5 @@ namespace EasySoftCmdLine
         std::string _key;
         std::string _value;
     };
-
 }
 #endif /* CONFIGURATION_KEYVALUEOPTION_H_ */

@@ -10,7 +10,6 @@ namespace EasySoftCmdLine
     #define VERSION_SHORT "-v"
     #define VERBOSE_LONG "--verbose"
     #define VERBOSE_SHORT "-vv"
-    #define LOGFILE_LONG "--logfile"
     // mode option
     #define INTERACTIVE_MODE_LONG "--interactive"
     #define INTERACTIVE_MODE_SHORT "-ia"
