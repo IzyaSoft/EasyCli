@@ -31,3 +31,11 @@
 # Debug and Release Dirs
 *Debug/
 *Release/
+
+#Visual Studio files
+*.suo
+*.filters
+*.user
+*.sdf
+*.opensdf
+*.ipch
