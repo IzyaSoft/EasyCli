@@ -26,7 +26,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1489173631956</id>
+			<id>1489225300657</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -35,12 +35,21 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1489173631957</id>
+			<id>1489225300659</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
 				<arguments>1.0-name-matches-false-false-tests</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1489225300661</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-MSVS</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>
