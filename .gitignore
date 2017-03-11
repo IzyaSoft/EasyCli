@@ -27,3 +27,7 @@
 *.exe
 *.out
 *.app
+
+# Debug and Release Dirs
+*Debug/
+*Release/
