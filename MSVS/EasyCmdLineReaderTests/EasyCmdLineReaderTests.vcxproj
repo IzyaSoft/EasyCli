@@ -10,20 +10,29 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\tests\easyCmdLineReaderTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\tests\parser\TestCommandLineOptionsParser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{DA1A0085-A321-47D9-8903-B9ABDBBDBA8A}</ProjectGuid>
+    <ProjectGuid>{0D1A80F1-F7E6-421C-AE7F-A8D624EEE9DC}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>EasyCmdLineReader</RootNamespace>
+    <RootNamespace>EasyCmdLineReaderTests</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -41,7 +50,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\c++\EasyCmdLineReader\src\defs;E:\c++\EasyCmdLineReader\src\validator;E:\c++\EasyCmdLineReader\src\parser;E:\c++\EasyCmdLineReader\src\manager;E:\c++\EasyCmdLineReader\src;$(IncludePath)</IncludePath>
+    <IncludePath>E:\c++\EasyCmdLineReader\src;E:\c++\EasyCmdLineReader\MSVS\packages\gtest.1.7.0\build\native\include;E:\c++\EasyCmdLineReader\tests\parser;E:\c++\EasyCmdLineReader\src\validator;E:\c++\EasyCmdLineReader\src\parser;E:\c++\EasyCmdLineReader\src\manager;E:\c++\EasyCmdLineReader\src\defs;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\c++\EasyCmdLineReader\MSVS\Debug;E:\c++\EasyCmdLineReader\MSVS\packages\gtest.1.7.0\build\native\lib\Release;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)$(ProjectName)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -49,58 +59,40 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;EASYCMDLINEREADER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile />
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>EasyCmdLineReader.lib;gtest.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\c++\EasyCmdLineReader\MSVS\packages\gtest.1.7.0\build\native\lib\Debug;E:\c++\EasyCmdLineReader\MSVS\EasyCmdLineReader\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;EASYCMDLINEREADER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\src\manager\CommandLineOptionsManager.cpp" />
-    <ClCompile Include="..\..\src\parser\CommandLineOptionsParser.cpp" />
-    <ClCompile Include="..\..\src\validator\ICommandLineOptionsValidator.cpp" />
-    <ClCompile Include="dllmain.cpp">
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\src\defs\ConfigurationKeys.h" />
-    <ClInclude Include="..\..\src\defs\NestedOptions.h" />
-    <ClInclude Include="..\..\src\KeyValueOption.h" />
-    <ClInclude Include="..\..\src\manager\CommandLineOptionsManager.h" />
-    <ClInclude Include="..\..\src\parser\CommandLineOptionsParser.h" />
-    <ClInclude Include="..\..\src\platform.h" />
-    <ClInclude Include="..\..\src\validator\ICommandLineOptionValidator.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\gtest.1.7.0\build\native\gtest.targets" Condition="Exists('..\packages\gtest.1.7.0\build\native\gtest.targets')" />
   </ImportGroup>
 </Project>
