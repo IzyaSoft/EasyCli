@@ -3,13 +3,14 @@
 
 #include <vector>
 #include "KeyValueOption.h"
+#include "platform.h"
 
 namespace EasySoftCmdLine
 {
     #define EXECUTION_PATH_KEY "path"
     #define COMMAND_KEY        "command"
 
-    class CommandLineOptionsParser
+    class EXPORT CommandLineOptionsParser
     {
     public:
         CommandLineOptionsParser(std::vector<std::string>& optionPrefixes, std::vector<std::string>& keyValueSeparators, bool interactiveMode = false);

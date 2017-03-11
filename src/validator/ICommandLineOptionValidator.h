@@ -3,10 +3,11 @@
 
 #include <vector>
 #include "KeyValueOption.h"
+#include "platform.h"
 
 namespace EasySoftCmdLine
 {
-    class ICommandLineOptionValidator
+    class EXPORT ICommandLineOptionValidator
     {
     public:
         virtual bool Validate(std::vector<EasySoftCmdLine::KeyValueOption> options, bool useWithoutOptions = true, bool printHelp = true);

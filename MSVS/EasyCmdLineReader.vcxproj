@@ -97,6 +97,7 @@
     <ClInclude Include="..\src\KeyValueOption.h" />
     <ClInclude Include="..\src\manager\CommandLineOptionsManager.h" />
     <ClInclude Include="..\src\parser\CommandLineOptionsParser.h" />
+    <ClInclude Include="..\src\platform.h" />
     <ClInclude Include="..\src\validator\ICommandLineOptionValidator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
