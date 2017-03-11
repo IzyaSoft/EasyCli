@@ -76,12 +76,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\manager\CommandLineOptionsManager.cpp" />
-    <ClCompile Include="..\src\parser\CommandLineOptionsParser.cpp" />
-    <ClCompile Include="..\src\validator\ICommandLineOptionsValidator.cpp" />
+    <ClCompile Include="..\..\src\manager\CommandLineOptionsManager.cpp" />
+    <ClCompile Include="..\..\src\parser\CommandLineOptionsParser.cpp" />
+    <ClCompile Include="..\..\src\validator\ICommandLineOptionsValidator.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -92,13 +91,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\defs\ConfigurationKeys.h" />
-    <ClInclude Include="..\src\defs\NestedOptions.h" />
-    <ClInclude Include="..\src\KeyValueOption.h" />
-    <ClInclude Include="..\src\manager\CommandLineOptionsManager.h" />
-    <ClInclude Include="..\src\parser\CommandLineOptionsParser.h" />
-    <ClInclude Include="..\src\platform.h" />
-    <ClInclude Include="..\src\validator\ICommandLineOptionValidator.h" />
+    <ClInclude Include="..\..\src\defs\ConfigurationKeys.h" />
+    <ClInclude Include="..\..\src\defs\NestedOptions.h" />
+    <ClInclude Include="..\..\src\KeyValueOption.h" />
+    <ClInclude Include="..\..\src\manager\CommandLineOptionsManager.h" />
+    <ClInclude Include="..\..\src\parser\CommandLineOptionsParser.h" />
+    <ClInclude Include="..\..\src\platform.h" />
+    <ClInclude Include="..\..\src\validator\ICommandLineOptionValidator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
