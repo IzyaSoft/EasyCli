@@ -14,9 +14,6 @@
     <ClCompile Include="..\..\tests\easyCmdLineReaderTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\tests\parser\TestCommandLineOptionsParser.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -66,6 +63,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile />
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\src\;$(SolutionDir)..\src\defs\;$(SolutionDir)..\src\manager\;$(SolutionDir)..\src\parser\;$(SolutionDir)..\src\validator\;$(SolutionDir)..\tests\parser\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
