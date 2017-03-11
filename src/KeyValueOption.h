@@ -2,10 +2,11 @@
 #define CONFIGURATION_KEYVALUEOPTION_H_
 
 #include <string>
+#include "platform.h"
 
 namespace EasySoftCmdLine
 {
-    class KeyValueOption
+    class EXPORT KeyValueOption
     {
     public:
         KeyValueOption(std::string key, std::string value) :_key(key), _value(value) { }

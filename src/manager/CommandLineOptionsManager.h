@@ -7,7 +7,7 @@
 
 namespace EasySoftCmdLine
 {
-    class CommandLineOptionsManager
+    class EXPORT CommandLineOptionsManager
     {
     public:
         CommandLineOptionsManager(EasySoftCmdLine::ICommandLineOptionValidator* validator, int argc, char** argv,
