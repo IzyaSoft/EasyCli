@@ -19,13 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\manager\CommandLineOptionsManager.cpp" />
-    <ClCompile Include="..\..\src\parser\CommandLineOptionsParser.cpp" />
-    <ClCompile Include="..\..\src\validator\ICommandLineOptionsValidator.cpp" />
     <ClCompile Include="..\..\tests\easyCmdLineReaderTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EasyCmdLineReader\EasyCmdLineReader.vcxproj">
+      <Project>{f4b2158b-b831-4a79-9b4c-6d5e25008507}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C3FE4BD4-B294-4839-9579-82878707D9E2}</ProjectGuid>
