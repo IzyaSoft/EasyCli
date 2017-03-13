@@ -39,3 +39,5 @@
 *.sdf
 *.opensdf
 *.ipch
+# Nuget
+*packages/
