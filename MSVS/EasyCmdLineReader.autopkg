@@ -2,7 +2,7 @@ nuget {
    nuspec {
       id = EasyCmdLineReader;
       version : 1.0.0.0;
-      title: Sample Native NuGet Package;
+      title: EasyCmdLineReader;
       authors: {EasySoft Group};
       owners: {EasySoft Group};
       licenseUrl: "https://github.com/IzyaSoft/EasyCmdLineReader/blob/master/LICENSE";
