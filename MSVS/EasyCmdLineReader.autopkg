@@ -1,0 +1,38 @@
+nuget {
+   nuspec {
+      id = EasyCmdLineReader;
+      version : 1.0.0.0;
+      title: Sample Native NuGet Package;
+      authors: {EasySoft Group};
+      owners: {EasySoft Group};
+      licenseUrl: "https://github.com/IzyaSoft/EasyCmdLineReader/blob/master/LICENSE";
+      iconUrl: "";
+      requireLicenseAcceptance:false;
+      summary:Cross platform library (in sources) for reading, parsing and validation command line arguments;
+      description: @"Cross platform library (in sources) for reading, parsing and validation command line arguments";
+      releaseNotes: "Fully completed, tested with gtest library and used in 3 commercial projects";
+      projectUrl: "https://github.com/IzyaSoft/EasyCmdLineReader";
+      copyright: Copyright (c) 2017 EasySoft Group;
+      tags: { commandline, arguments parsing, arguments, cmd};
+   };
+ 
+   files {
+      include: { ..\src\*.h };
+ 
+      // The release here works for any config that contains release
+      // Examples : Release ENU,  RELEASE-ENU,  Release DEU
+      [x86,v120,release] {
+         lib:     { Release\*.lib; }
+         symbols: { Release\*.pdb; }
+         bin:     { Release\*.dll; }
+      };
+ 
+      // The debug here works for any config that contains debug
+      // Examples : Debug ENU,  DEBUG-ENU,  Debug DEU
+      [x86,v120,debug] {
+         lib:     { Debug\*.lib;  }
+         symbols: { Debug\*.pdb; }
+         bin:     { Debug\*.dll; }
+      };
+   };
+}
