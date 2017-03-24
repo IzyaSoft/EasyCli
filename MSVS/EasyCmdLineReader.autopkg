@@ -6,9 +6,9 @@ nuget {
       authors: {EasySoft Group};
       owners: {EasySoft Group};
       licenseUrl: "https://github.com/IzyaSoft/EasyCmdLineReader/blob/master/LICENSE";
-      iconUrl: "";
+      iconUrl: "https://github.com/IzyaSoft/EasyCmdLineReaderblob/master/easycmdlinereader.ico";
       requireLicenseAcceptance:false;
-      summary:Cross platform library (in sources) for reading, parsing and validation command line arguments;
+      summary: "Cross platform library (in sources) for reading, parsing and validation command line arguments";
       description: @"Cross platform library (in sources) for reading, parsing and validation command line arguments";
       releaseNotes: "Fully completed, tested with gtest library and used in 3 commercial projects";
       projectUrl: "https://github.com/IzyaSoft/EasyCmdLineReader";
