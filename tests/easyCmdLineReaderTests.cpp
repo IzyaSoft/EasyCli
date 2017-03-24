@@ -1,4 +1,3 @@
-#include <iostream>
 #include "TestCommandLineOptionsParser.h"
 #include "gtest/gtest.h"
 
