@@ -40,7 +40,7 @@ namespace EasySoftCmdLine
     bool CommandLineOptionsManager :: TryGetIntValue(std::string key, int& outValue)
     {
         std::string value;
-        if(TryGetValue(key, value))
+        if(!TryGetValue(key, value))
             return false;
         outValue = atoi(value.c_str());
         return true;
@@ -49,7 +49,7 @@ namespace EasySoftCmdLine
     bool CommandLineOptionsManager :: TryGetDoubleValue(std::string key, double& outValue)
     {
         std::string value;
-        if(TryGetValue(key, value))
+        if(!TryGetValue(key, value))
             return false;
         outValue = atof(value.c_str());
         return true;
