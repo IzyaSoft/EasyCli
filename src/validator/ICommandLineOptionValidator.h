@@ -10,7 +10,7 @@ namespace EasySoftCmdLine
     class EXPORT ICommandLineOptionValidator
     {
     public:
-        virtual bool Validate(std::vector<EasySoftCmdLine::KeyValueOption>& options, bool useWithoutOptions = true, bool printHelp = true) const;
+        virtual bool Validate(const std::vector<EasySoftCmdLine::KeyValueOption>& options, const bool useWithoutOptions = true, const bool printHelp = true) const;
         virtual ~ICommandLineOptionValidator(){}
     };
 }

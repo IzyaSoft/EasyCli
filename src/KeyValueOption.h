@@ -10,8 +10,8 @@ namespace EasySoftCmdLine
     {
     public:
         KeyValueOption(const std::string& key, const std::string& value) :_key(key), _value(value) { }
-        std::string& GetKey() {return _key;}
-        std::string& GetValue() {return _value;}
+        const std::string& GetKey() const {return _key;}
+        const std::string& GetValue() const {return _value;}
     private:
         std::string _key;
         std::string _value;
