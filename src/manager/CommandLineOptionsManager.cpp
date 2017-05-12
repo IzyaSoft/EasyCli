@@ -7,7 +7,7 @@
 namespace EasySoftCmdLine
 {
     CommandLineOptionsManager :: CommandLineOptionsManager(EasySoftCmdLine::ICommandLineOptionValidator* validator,
-                                                           int argc, char** argv, bool linuxStyle, bool useSpaces, bool interactiveMode)
+                                                           const int argc, const char** argv, bool linuxStyle, bool useSpaces, bool interactiveMode)
     {
         _validator = std::shared_ptr<EasySoftCmdLine::ICommandLineOptionValidator>(validator);
         std::vector<std::string> prefix;

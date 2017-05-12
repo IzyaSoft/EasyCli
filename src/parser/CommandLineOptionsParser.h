@@ -14,7 +14,7 @@ namespace EasySoftCmdLine
     {
     public:
         CommandLineOptionsParser(std::vector<std::string>& optionPrefixes, std::vector<std::string>& keyValueSeparators, bool interactiveMode = false);
-        std::vector<EasySoftCmdLine::KeyValueOption>& Parse(int argc, char** argv);
+        std::vector<EasySoftCmdLine::KeyValueOption>& Parse(const int argc, const char** argv);
     private:
         bool CheckIsKey(std::string& argumentString) const;
         bool CheckValueIsPresent(std::string& argumentString) const;

@@ -10,7 +10,7 @@ namespace EasySoftCmdLine
     class EXPORT CommandLineOptionsManager
     {
     public:
-        CommandLineOptionsManager(EasySoftCmdLine::ICommandLineOptionValidator* validator, int argc, char** argv,
+        CommandLineOptionsManager(EasySoftCmdLine::ICommandLineOptionValidator* validator, const int argc, const char** argv,
                                   bool linuxStyle = true, bool useSpaces = true, bool interactiveMode = false);
         bool TryGetValue(std::string key, std::string& outValue);
         bool TryGetIntValue(std::string key, int& outValue);

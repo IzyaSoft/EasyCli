@@ -11,7 +11,7 @@ namespace EasySoftCmdLine
        _interactiveMode = interactiveMode;
     }
 
-    std::vector<KeyValueOption>& CommandLineOptionsParser :: Parse(int argc, char** argv)
+    std::vector<KeyValueOption>& CommandLineOptionsParser :: Parse(const int argc, const char** argv)
     {
         try
         {

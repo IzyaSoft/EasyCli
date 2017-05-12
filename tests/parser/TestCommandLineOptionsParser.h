@@ -14,21 +14,21 @@ namespace EasySoftCmdLineTests
 
     //std::string simpleValidString = "./someapp --help";
     //std::string simpleValidString2 = "./someapp -l \"abcdefgh\" --verbose";
-    char* onlyHelpOption[] = {"./someapp", "--help"};
+    const char* onlyHelpOption[] = {"./someapp", "--help"};
     std::vector<EasySoftCmdLine::KeyValueOption> expectedOnlyHelpOptions = {EasySoftCmdLine::KeyValueOption(EXECUTION_PATH_KEY, "./someapp"),
                                                                             EasySoftCmdLine::KeyValueOption("--help", "")};
-    char* optionsWithRealValues[] = {"./someapp", "-l", "abcdefgh", "--verbose"};
+    const char* optionsWithRealValues[] = {"./someapp", "-l", "abcdefgh", "--verbose"};
     std::vector<EasySoftCmdLine::KeyValueOption> expectedOptionsWithRealValues = {EasySoftCmdLine::KeyValueOption(EXECUTION_PATH_KEY, "./someapp"),
                                                                                   EasySoftCmdLine::KeyValueOption("-l", "abcdefgh"),
                                                                                   EasySoftCmdLine::KeyValueOption("--verbose", "")};
-    char* optionsWithRealValuesSeparatedWithEquals[] = {"./someapp", "-l=abcdefgh", "--device=/dev/usb1", "--subcarrier=2"};
+    const char* optionsWithRealValuesSeparatedWithEquals[] = {"./someapp", "-l=abcdefgh", "--device=/dev/usb1", "--subcarrier=2"};
     std::vector<EasySoftCmdLine::KeyValueOption> expectedOptionsWithRealValuesSeparatedWithEquals = {EasySoftCmdLine::KeyValueOption(EXECUTION_PATH_KEY, "./someapp"),
                                                                                                      EasySoftCmdLine::KeyValueOption("-l", "abcdefgh"),
                                                                                                      EasySoftCmdLine::KeyValueOption("--device", "/dev/usb1"),
                                                                                                      EasySoftCmdLine::KeyValueOption("--subcarrier", "2")};
-    char* optionsWithoutPrefixes[] = {"./someapp", "abc", "def=def", "aaa", "lll"};
+    const char* optionsWithoutPrefixes[] = {"./someapp", "abc", "def=def", "aaa", "lll"};
     std::vector<EasySoftCmdLine::KeyValueOption> expectedOptionsWithoutPrefixes = {EasySoftCmdLine::KeyValueOption(EXECUTION_PATH_KEY, "./someapp")};
-    char* optionsWithRealValuesSeparatedWithEqualsWinStyle[] = {".\\someapp.exe", "/l=abcdefgh", "/device=usb1", "/subcarrier=2"};
+    const char* optionsWithRealValuesSeparatedWithEqualsWinStyle[] = {".\\someapp.exe", "/l=abcdefgh", "/device=usb1", "/subcarrier=2"};
     std::vector<EasySoftCmdLine::KeyValueOption> expectedOptionsWithRealValuesSeparatedWithEqualsWinStyle = {EasySoftCmdLine::KeyValueOption(EXECUTION_PATH_KEY, ".\\someapp.exe"),
                                                                                                              EasySoftCmdLine::KeyValueOption("/l", "abcdefgh"),
                                                                                                              EasySoftCmdLine::KeyValueOption("/device", "usb1"),
