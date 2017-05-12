@@ -6,7 +6,7 @@
 
 namespace EasySoftCmdLine
 {
-    bool ICommandLineOptionValidator :: Validate(std::vector<EasySoftCmdLine::KeyValueOption> options, bool useWithoutOptions, bool printHelp)
+    bool ICommandLineOptionValidator :: Validate(std::vector<EasySoftCmdLine::KeyValueOption>& options, bool useWithoutOptions, bool printHelp) const
     {
         if(!useWithoutOptions && options.size() < 2)
         {
