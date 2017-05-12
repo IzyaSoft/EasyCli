@@ -8,7 +8,7 @@ CXX = g++
 CXXFLAGS = -g -O2 -Wall
 # 2. Compiler And Linker Keys (man gcc)
 LIB_NAME = libEasyCmdLineReader.so
-LIB_VERSION_OPTION = 1.0
+LIB_VERSION_OPTION = 1.1
 LIB_BUILD_DIRECTORY = .
 
 LIB_COMPILE_OPTION = -fPIC
