@@ -8,7 +8,7 @@ int main(int argc, char **argv)
     std::vector<std::string> keyValueSeparatorViaEquals = { "=" };
 
     EasySoftCmdLine::CommandLineOptionsParser parser(windowsCommandLinePrefixes, keyValueSeparatorViaEquals);
-    std::vector<EasySoftCmdLine::KeyValueOption> pairs = parser.Parse(argc, argv);
+    std::vector<EasySoftCmdLine::KeyValueOption> pairs = parser.Parse(argc, (const char**)argv);
 
     std::cout << "Key-Value Pairs:" << std::endl << std::endl;
 
