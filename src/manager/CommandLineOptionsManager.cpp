@@ -7,7 +7,8 @@
 namespace EasySoftCmdLine
 {
     CommandLineOptionsManager :: CommandLineOptionsManager(EasySoftCmdLine::ICommandLineOptionValidator* validator,
-                                                           const int argc, const char** argv, bool linuxStyle, bool useSpaces, bool interactiveMode)
+                                                           const int argc, const char** argv, const bool linuxStyle,
+                                                           const bool useSpaces, const bool interactiveMode)
     {
         _validator = std::shared_ptr<EasySoftCmdLine::ICommandLineOptionValidator>(validator);
         std::vector<std::string> prefix;
@@ -24,9 +25,9 @@ namespace EasySoftCmdLine
             exit(1);
     }
 
-    bool CommandLineOptionsManager :: TryGetValue(std::string key, std::string& outValue)
+    bool CommandLineOptionsManager :: TryGetValue(const std::string& key, std::string& outValue) const
     {
-        std::vector<KeyValueOption>::iterator it = std::find_if(_programOptions.begin(), _programOptions.end(),
+        std::vector<KeyValueOption>::const_iterator it = std::find_if(_programOptions.begin(), _programOptions.end(),
                                                                [key](EasySoftCmdLine::KeyValueOption item)
                                                                {
                                                                    return strcmp(item.GetKey().c_str(), key.c_str()) == 0;
@@ -37,7 +38,7 @@ namespace EasySoftCmdLine
         return true;
     }
 
-    bool CommandLineOptionsManager :: TryGetIntValue(std::string key, int& outValue)
+    bool CommandLineOptionsManager :: TryGetIntValue(const std::string& key, int& outValue) const
     {
         std::string value;
         if(!TryGetValue(key, value))
@@ -46,7 +47,7 @@ namespace EasySoftCmdLine
         return true;
     }
 
-    bool CommandLineOptionsManager :: TryGetDoubleValue(std::string key, double& outValue)
+    bool CommandLineOptionsManager :: TryGetDoubleValue(const std::string& key, double& outValue) const
     {
         std::string value;
         if(!TryGetValue(key, value))

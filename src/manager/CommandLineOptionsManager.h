@@ -11,10 +11,10 @@ namespace EasySoftCmdLine
     {
     public:
         CommandLineOptionsManager(EasySoftCmdLine::ICommandLineOptionValidator* validator, const int argc, const char** argv,
-                                  bool linuxStyle = true, bool useSpaces = true, bool interactiveMode = false);
-        bool TryGetValue(std::string key, std::string& outValue);
-        bool TryGetIntValue(std::string key, int& outValue);
-        bool TryGetDoubleValue(std::string key, double& outValue);
+                                  const bool linuxStyle = true, const bool useSpaces = true, const bool interactiveMode = false);
+        bool TryGetValue(const std::string& key, std::string& outValue) const;
+        bool TryGetIntValue(const std::string& key, int& outValue) const;
+        bool TryGetDoubleValue(const std::string& key, double& outValue) const;
         std::vector<EasySoftCmdLine::KeyValueOption>& GetParsedOptions() {return _programOptions;}
     private:
         std::shared_ptr<EasySoftCmdLine::CommandLineOptionsParser> _parser;
