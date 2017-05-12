@@ -1,4 +1,5 @@
 #include <string.h>
+#include <future>
 #include "CommandLineOptionsParser.h"
 
 namespace EasySoftCmdLine
@@ -10,7 +11,7 @@ namespace EasySoftCmdLine
        _interactiveMode = interactiveMode;
     }
 
-    std::vector<KeyValueOption>& CommandLineOptionsParser :: Parse(int argc, char** argv)
+    std::vector<KeyValueOption>& CommandLineOptionsParser :: Parse(const int argc, const char** argv)
     {
         try
         {
@@ -56,25 +57,25 @@ namespace EasySoftCmdLine
 
     std::string& CommandLineOptionsParser :: GetKeyValueSeparator(std::string& argumentString)
     {
-        std::vector<std::string>:: iterator it;
+        std::vector<std::string>::iterator it;
         for(it = _keyValueSeparators.begin(); it != _keyValueSeparators.end(); it++)
             if(argumentString.find(*it) != std::string::npos)
-                        return (*it);
-        throw ("Something goes wrong!");
+                return (*it);
+        throw std::runtime_error("Something goes wrong at getting key value separator!");
     }
 
-    bool CommandLineOptionsParser :: CheckValueIsPresent(std::string& argumentString)
+    bool CommandLineOptionsParser :: CheckValueIsPresent(std::string& argumentString) const
     {
-        std::vector<std::string>:: iterator it;
+        std::vector<std::string>::const_iterator it;
         for(it = _keyValueSeparators.begin(); it != _keyValueSeparators.end(); it++)
             if(argumentString.find(*it) != std::string::npos)
                 return true;
         return false;
     }
 
-    bool CommandLineOptionsParser :: CheckIsKey(std::string& argumentString)
+    bool CommandLineOptionsParser :: CheckIsKey(std::string& argumentString) const
     {
-       std::vector<std::string>:: iterator it;
+       std::vector<std::string>::const_iterator it;
        for(it = _optionPrefixes.begin(); it!= _optionPrefixes.end(); it++)
            if(strncmp((*it).c_str(), argumentString.c_str(), (*it).size()) == 0)
                return true;
