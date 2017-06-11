@@ -65,7 +65,8 @@ create-build-dir:
 	@ -mkdir -p $(LIB_BUILD_DIRECTORY)
 	
 $(CPP_SHARED_LIB):$(C_OBJFILES) $(CPP_OBJFILES)
-	$(CXX) $(CXXFLAGS) $(LANG_OPTION) $(LIB_LINK_OPTION) $(DEFS) $(INCLUDES) $(LIBPATH) $(LIBS) -o $(CPP_SHARED_LIB) $(CPP_OBJFILES)
+	$(CXX) $(LIB_LINK_OPTION) $(LIBPATH) $(LIBS) -o $(CPP_SHARED_LIB) $(CPP_OBJFILES)
+	@ -ln -s $(CPP_SHARED_LIB) $(LIB_NAME)
 
 # These are the suffix replacement rules
 %.o : %.c
@@ -76,6 +77,7 @@ $(CPP_SHARED_LIB):$(C_OBJFILES) $(CPP_OBJFILES)
 
 clean:
 	@ -rm -f $(CPP_OBJFILES)
+	@ -rm -f $(LIB_NAME)
 	@ -rm -f $(CPP_SHARED_LIB)
 	@ -rm -rf $(LIB_BUILD_DIRECTORY)/include
 
