@@ -7,7 +7,8 @@
 CXX = g++
 CXXFLAGS = -g -O2 -Wall
 # 2. Compiler And Linker Keys (man gcc)
-LIB_NAME = libEasyCmdLineReader.so
+PROJECT_NAME = libEasyCmdLineReader
+LIB_NAME = $(PROJECT_NAME).so
 LIB_VERSION_OPTION = 1.1
 LIB_BUILD_DIRECTORY = .
 
@@ -55,7 +56,7 @@ DEFAULT_TARGET = shared-lib
 # $< first dependancy
 
 # PHONY TARGET ARE TARGETS WITHOUT OUTPUT FILES
-.PHONY: depend clean finish create-build-dir copy-include
+.PHONY: depend clean finish create-build-dir copy-include install
 
 all: clean create-build-dir $(DEFAULT_TARGET) finish
 
@@ -67,6 +68,17 @@ create-build-dir:
 $(CPP_SHARED_LIB):$(C_OBJFILES) $(CPP_OBJFILES)
 	$(CXX) $(LIB_LINK_OPTION) $(LIBPATH) $(LIBS) -o $(CPP_SHARED_LIB) $(CPP_OBJFILES)
 	@ -ln -s $(CPP_SHARED_LIB) $(LIB_NAME)
+	
+install:
+	@ -cp $(CPP_SHARED_LIB) /usr/lib
+	@ -ln -s /usr/lib/$(LIB_NAME).$(LIB_VERSION_OPTION) /usr/lib/$(LIB_NAME)
+	@ -mkdir /usr/include/$(PROJECT_NAME)
+	@ -cp -R $(LIB_BUILD_DIRECTORY)/include /usr/include/$(PROJECT_NAME)
+
+uninstall:
+	@ -rm /usr/lib/$(LIB_NAME)
+	@ -rm /usr/lib/$(LIB_NAME).$(LIB_VERSION_OPTION)
+	@ -rm -rf /usr/include/$(PROJECT_NAME)
 
 # These are the suffix replacement rules
 %.o : %.c
