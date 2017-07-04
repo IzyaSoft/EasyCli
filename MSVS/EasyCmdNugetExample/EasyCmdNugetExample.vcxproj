@@ -41,7 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)\packages\EasyCmdLineReader.1.1\include;$(SolutionDir)\packages\EasyCmdLineReader.1.1\include\validator;$(SolutionDir)\packages\EasyCmdLineReader.1.1\include\parser;$(SolutionDir)\packages\EasyCmdLineReader.1.1\include\defs;$(SolutionDir)\packages\EasyCmdLineReader.1.1\include\manager;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\packages\EasyCmdLineReader.1.1.1\include;$(SolutionDir)\packages\EasyCmdLineReader.1.1.1\include\validator;$(SolutionDir)\packages\EasyCmdLineReader.1.1.1\include\parser;$(SolutionDir)\packages\EasyCmdLineReader.1.1.1\include\defs;$(SolutionDir)\packages\EasyCmdLineReader.1.1.1\include\manager;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -58,7 +58,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\packages\EasyCmdLineReader.1.1\build\native\lib\vc120\x86\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\packages\EasyCmdLineReader.1.1.1\build\native\lib\vc120\x86\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>EasyCmdLineReader.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
