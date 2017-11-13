@@ -89,4 +89,4 @@ namespace EasySoft
     }
 }
 
-#endif /* CONFIGURATION_TESTCOMMANDLINEOPTIONSPARSER_H_ */
+#endif
