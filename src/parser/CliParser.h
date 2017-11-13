@@ -23,8 +23,8 @@ namespace EasySoft
             std::string& GetKeyValueSeparator(std::string& argumentString);
         private:
             bool _interactiveMode;
-            std::vector<EasySoft::Cli::    > _program    s;
-            std::vector<std::string> _    Prefixes;
+            std::vector<EasySoft::Cli::Option> _programOptions;
+            std::vector<std::string> _optionPrefixes;
             std::vector<std::string> _keyValueSeparators;
         };
     }
