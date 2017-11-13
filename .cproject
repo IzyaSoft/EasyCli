@@ -30,11 +30,11 @@
 								<option id="gnu.cpp.compiler.so.debug.option.optimization.level.762050559" name="Optimization Level" superClass="gnu.cpp.compiler.so.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.so.debug.option.debugging.level.1263904856" name="Debug Level" superClass="gnu.cpp.compiler.so.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1245123528" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCmdLineReader/src/defs}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCmdLineReader/src/manager}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCmdLineReader/src/parser}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCmdLineReader/src/validator}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCmdLineReader/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCli/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCli/src/defs}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCli/src/manager}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCli/src/parser}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCli/src/validator}&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.442836647" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__GXX_EXPERIMENTAL_CXX0X__"/>
@@ -52,8 +52,8 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.so.debug.1673960612" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.debug">
 								<option defaultValue="true" id="gnu.cpp.link.so.debug.option.shared.239846118" name="Shared (-shared)" superClass="gnu.cpp.link.so.debug.option.shared" valueType="boolean"/>
-								<option id="gnu.cpp.link.option.paths.390388140" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths"/>
-								<option id="gnu.cpp.link.option.libs.159713672" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs"/>
+								<option id="gnu.cpp.link.option.paths.390388140" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths"/>
+								<option id="gnu.cpp.link.option.libs.159713672" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1578500912" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>

@@ -24,13 +24,13 @@
 								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.1354935341" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.315209874" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.165110088" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCmdLineReaderTests/parser}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCmdLineReader/src}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCmdLineReader/src/defs}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCmdLineReader/src/manager}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCmdLineReader/src/parser}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCmdLineReader/src/validator}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/EasyCmdLineReader/contrib/gtest/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCliTests/parser}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCli/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCli/src/defs}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCli/src/manager}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCli/src/parser}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCli/src/validator}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/EasyCli/contrib/gtest/include&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.other.other.1492521548" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -std=c++11" valueType="string"/>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.885505026" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
@@ -46,13 +46,13 @@
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.933221139" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.539875164" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
 								<option id="gnu.cpp.link.option.paths.1571414530" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCmdLineReader/Debug}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/EasyCmdLineReader/contrib/gtest&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/EasyCli/Debug}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/EasyCli/contrib/gtest&quot;"/>
 								</option>
 								<option id="gnu.cpp.link.option.libs.117966881" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="pthread"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="gtest"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="EasyCmdLineReader"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="EasyCli"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.579837326" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
