@@ -8,8 +8,8 @@ namespace EasySoft
     {
         CliParser :: CliParser(std::vector<std::string>& optionPrefixes, std::vector<std::string>& keyValueSeparators, bool interactiveMode)
         {
-           _optionPrefixes.assign(optionPrefixes.begin(), optionPrefixes.end());
-           _keyValueSeparators.assign(keyValueSeparators.begin(), keyValueSeparators.end());
+           _prefixes.assign(optionPrefixes.begin(), optionPrefixes.end());
+           _separators.assign(keyValueSeparators.begin(), keyValueSeparators.end());
            _interactiveMode = interactiveMode;
         }
 
@@ -17,9 +17,9 @@ namespace EasySoft
         {
             try
             {
-                _programOptions.reserve(argc);
+                _options.reserve(argc);
                 std::string firstKey = _interactiveMode ? COMMAND_KEY : EXECUTION_PATH_KEY;
-                _programOptions.push_back(EasySoft::Cli::Option (firstKey, argv[0]));
+                _options.push_back(EasySoft::Cli::Option (firstKey, argv[0]));
                 for(int argCounter = 1; argCounter < argc; argCounter++)
                 {
                     std::string argumentString(argv[argCounter]);
@@ -27,11 +27,11 @@ namespace EasySoft
                     {
                         // probably could be a value ...
                         // 1. key and value in the one string i.e. key=value
-                        if(CheckValueIsPresent(argumentString))
+                        if(CheckIsValuePresent(argumentString))
                         {
-                            std::string separator = GetKeyValueSeparator(argumentString);
+                            std::string separator = GetSeparator(argumentString);
                             int index = argumentString.find(separator);
-                            _programOptions.push_back(EasySoft::Cli::Option (argumentString.substr(0, index), argumentString.substr(index + separator.size())));
+                            _options.push_back(EasySoft::Cli::Option (argumentString.substr(0, index), argumentString.substr(index + separator.size())));
                             continue;
                         }
                         if(argCounter + 1 < argc)
@@ -40,36 +40,36 @@ namespace EasySoft
                             // 2. key and value were separated with space and placed in 2 different elements
                             if(!CheckIsKey(nextArgumentString))
                             {
-                                _programOptions.push_back(EasySoft::Cli::Option (argumentString, nextArgumentString));
+                                _options.push_back(EasySoft::Cli::Option (argumentString, nextArgumentString));
                                 continue;
                             }
                         }
                         // 3. option contains only key and no value
-                        _programOptions.push_back(EasySoft::Cli::Option (argumentString, std::string ()));
+                        _options.push_back(EasySoft::Cli::Option (argumentString, std::string ()));
                     }
                 }
-                return _programOptions;
+                return _options;
             }
             catch(...)
             {
-                _programOptions.clear();
-                return _programOptions;
+                _options.clear();
+                return _options;
             }
         }
 
-        std::string& CliParser :: GetKeyValueSeparator(std::string& argumentString)
+        std::string& CliParser :: GetSeparator(std::string& argumentString)
         {
             std::vector<std::string>::iterator it;
-            for(it = _keyValueSeparators.begin(); it != _keyValueSeparators.end(); it++)
+            for(it = _separators.begin(); it != _separators.end(); it++)
                 if(argumentString.find(*it) != std::string::npos)
                     return (*it);
             throw std::runtime_error("Something goes wrong at getting key value separator!");
         }
 
-        bool CliParser :: CheckValueIsPresent(std::string& argumentString) const
+        bool CliParser :: CheckIsValuePresent(std::string& argumentString) const
         {
             std::vector<std::string>::const_iterator it;
-            for(it = _keyValueSeparators.begin(); it != _keyValueSeparators.end(); it++)
+            for(it = _separators.begin(); it != _separators.end(); it++)
                 if(argumentString.find(*it) != std::string::npos)
                     return true;
             return false;
@@ -78,7 +78,7 @@ namespace EasySoft
         bool CliParser :: CheckIsKey(std::string& argumentString) const
         {
            std::vector<std::string>::const_iterator it;
-           for(it = _optionPrefixes.begin(); it!= _optionPrefixes.end(); it++)
+           for(it = _prefixes.begin(); it!= _prefixes.end(); it++)
                if(strncmp((*it).c_str(), argumentString.c_str(), (*it).size()) == 0)
                    return true;
            return false;

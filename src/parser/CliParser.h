@@ -10,7 +10,7 @@ namespace EasySoft
     namespace Cli
     {
         #define EXECUTION_PATH_KEY "path"
-        #define COMMAND_KEY        "command"
+        #define COMMAND_KEY "command"
 
         class EXPORT CliParser
         {
@@ -19,13 +19,13 @@ namespace EasySoft
             std::vector<EasySoft::Cli::Option>& Parse(const int argc, const char** argv);
         private:
             bool CheckIsKey(std::string& argumentString) const;
-            bool CheckValueIsPresent(std::string& argumentString) const;
-            std::string& GetKeyValueSeparator(std::string& argumentString);
+            bool CheckIsValuePresent(std::string& argumentString) const;
+            std::string& GetSeparator(std::string& argumentString);
         private:
             bool _interactiveMode;
-            std::vector<EasySoft::Cli::Option> _programOptions;
-            std::vector<std::string> _optionPrefixes;
-            std::vector<std::string> _keyValueSeparators;
+            std::vector<EasySoft::Cli::Option> _options;
+            std::vector<std::string> _prefixes;
+            std::vector<std::string> _separators;
         };
     }
 }

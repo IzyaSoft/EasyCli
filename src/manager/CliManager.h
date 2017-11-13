@@ -17,11 +17,11 @@ namespace EasySoft
             bool TryGetValue(const std::string& key, std::string& outValue) const;
             bool TryGetIntValue(const std::string& key, int& outValue) const;
             bool TryGetDoubleValue(const std::string& key, double& outValue) const;
-            std::vector<EasySoft::Cli::Option>& GetParsedOptions() {return _programOptions;}
+            std::vector<EasySoft::Cli::Option>& GetParsedOptions() {return _options;}
         private:
             std::shared_ptr<EasySoft::Cli::CliParser> _parser;
             std::shared_ptr<EasySoft::Cli::ICliValidator> _validator;
-            std::vector<EasySoft::Cli::Option> _programOptions;
+            std::vector<EasySoft::Cli::Option> _options;
         };
     }
 }

@@ -21,20 +21,20 @@ namespace EasySoft
             if(!useSpaces)
                 separators.push_back("=");
             _parser = std::shared_ptr<EasySoft::Cli::CliParser>(new EasySoft::Cli::CliParser(prefix, separators, interactiveMode));
-            _programOptions = _parser->Parse(argc, argv);
-            bool validationResult = _validator->Validate(_programOptions, false, false);
+            _options = _parser->Parse(argc, argv);
+            bool validationResult = _validator->Validate(_options, false, false);
             if(!validationResult)
                 exit(1);
         }
 
         bool CliManager :: TryGetValue(const std::string& key, std::string& outValue) const
         {
-            std::vector<EasySoft::Cli::Option>::const_iterator it = std::find_if(_programOptions.begin(), _programOptions.end(),
+            std::vector<EasySoft::Cli::Option>::const_iterator it = std::find_if(_options.begin(), _options.end(),
                                                                    [key](EasySoft::Cli::Option item)
                                                                    {
                                                                        return strcmp(item.GetKey().c_str(), key.c_str()) == 0;
                                                                    });
-            if(it==_programOptions.end())
+            if(it==_options.end())
                 return false;
             outValue = (*it).GetValue();
             return true;
