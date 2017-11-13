@@ -1,14 +1,13 @@
 #include <vector>
 #include <iostream>
-#include "CommandLineOptionsManager.h"
+#include "CliManager.h"
 
 int main(int argc, char **argv)
 {
     int wait;
     // in debug there set following command line : ip_address 192.168.10.10 --port 80 --mode UDP (WERE SET in VS Project settings for DEBUG mode)
-    EasySoftCmdLine::CommandLineOptionsManager* cmdManager = new EasySoftCmdLine::CommandLineOptionsManager(new EasySoftCmdLine::ICommandLineOptionValidator(),
-                                                                                                            argc, (const char**)argv, true, true);
-    std::vector<EasySoftCmdLine::KeyValueOption> options = cmdManager->GetParsedOptions();
+    EasySoft::Cli::CliManager* cmdManager = new EasySoft::Cli::CliManager(new EasySoft::Cli::ICliValidator(), argc, (const char**)argv, true, true);
+    std::vector<EasySoft::Cli::Option> options = cmdManager->GetParsedOptions();
     if (options.size() > 0)
     {
         std::cout << "Following options were passed as command line arguments " << std::endl;
@@ -18,8 +17,7 @@ int main(int argc, char **argv)
     // extra values tests
     std::cout << "Emulation of passed following arguments: -d COM1 -s 115200 -p onebit --verbose" << std::endl;
     std::vector<char*> args = {"C:\apps\EasyCmdNugetExample.exe", "-d", "COM1", "-s", "115200", "-p", "onebit", "--verbose" };
-    cmdManager = new EasySoftCmdLine::CommandLineOptionsManager(new EasySoftCmdLine::ICommandLineOptionValidator(),
-                                                                args.size(), (const char**)args.data(), true, true);
+    cmdManager = new EasySoft::Cli::CliManager(new EasySoft::Cli::ICliValidator(), args.size(), (const char**)args.data(), true, true);
     
     std::string value;
     cmdManager->TryGetValue("-d", value);
