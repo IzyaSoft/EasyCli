@@ -1,11 +1,25 @@
-# EasyCli
-A cross-platform command line arguments parser and checker
-This is a overview about library usage: 
-https://github.com/IzyaSoft/EasyCli/wiki/How-to-use-EasyCmdLineReader-library
+# 1. EasyCli OVERVIEW
+A cross-platform command line tool (reading arguments from command line and getting values as string, int or double by key).
+Argumnets could be passed either in windows or linux style with possibility to choose separator (i.e. space or =)
+`
+Linux Style
 
-This is a full example : 
-https://github.com/IzyaSoft/EasyCli/wiki/Full-usage-example
+    ./myapp --port=com6 --baudrate=115200 --parity=even --stopbits=2 --flowcontrol=cts
+    ./myapp -if infile.txt -of outfile
+    
+Windows Style
 
-Nuget package (4 use library in visual studio) :
-https://github.com/IzyaSoft/EasyCli/wiki/Nuget-package
-package in nuget.org - EasyCmdLineReader
+    .\myapp.exe \ipAddress 192.168.10.43 \port 4543 \settings mysetting.xml
+`
+# 2. PROJECT STRUCTURE, TOOLS AND DEPENDENCIES
+
+# 3. USAGE EXAMPLE
+
+# 4. NUGET PACKAGE
+
+https://www.nuget.org/packages/EasyCli/
+Example of how to use could be found in MSVS (project for Visual Studio 2013) -> EasyCliNugetExample
+
+# 5. CONTRIBUTORS
+    EvilLord666 (Ushakov Michael)
+    VeryNiceGuy (Alex Petrov)
